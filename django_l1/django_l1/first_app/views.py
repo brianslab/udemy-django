@@ -5,4 +5,7 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, World!")
+    my_dictionary = {
+        'insert_me': "Hello from first_app/views.py"
+    }
+    return render(request, 'django_l1/index.html', context=my_dictionary)
