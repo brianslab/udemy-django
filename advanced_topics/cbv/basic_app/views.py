@@ -1,11 +1,11 @@
-from django.shortcuts import render
-from django.views.generic import View, TemplateView
+from django.views.generic import ListView, DetailView
+from . import models
 
 
-class IndexView(TemplateView):
-    template_name = 'index.html'
+class SchoolListView(ListView):
+    model = models.School
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["injectme"] = "injected from basic_app/views.py"
-        return context
+
+class SchoolDetailView(DetailView):
+    model = models.School
+    template_name = 'basic_app/school_detail.html'
