@@ -1,10 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import View
-from django.http import HttpResponse
-
-# Create your views here.
+from django.views.generic import View, TemplateView
 
 
-class CBView(View):
-    def get(self, request):
-        return HttpResponse("Class-based views are cool!")
+class IndexView(TemplateView):
+    template_name = 'index.html'
