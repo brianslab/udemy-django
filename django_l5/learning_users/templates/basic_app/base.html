@@ -18,6 +18,16 @@
           <li class='nav-item'>
             <a href="{% url 'basic_app:register' %}" class='nav-link active'>Register</a>
           </li>
+
+          {% if user.is_authenticated %}
+            <li class='nav-item'>
+              <a href="{% url 'logout' %}" class='nav-link active'>Logout</a>
+            </li>
+          {% else %}
+            <li class='nav-item'>
+              <a href="{% url 'basic_app:login' %}" class='nav-link active'>Login</a>
+            </li>
+          {% endif %}
         </ul>
       </div>
     </nav>
