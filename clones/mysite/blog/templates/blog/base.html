@@ -23,10 +23,10 @@
     <nav class="navbar navbar-default navbar-static-top techfont">
       <ul class="nav navbar-nav">
         <li>
-          <a class="navbar-brand bigbrand" href="{% url 'post_list'%}">My Blog</a>
+          <a class="navbar-brand bigbrand" href="{% url 'post_list' %}">My Blog</a>
         </li>
         <li>
-          <a class="navbar-link" href="{% url 'about'%}">About</a>
+          <a class="navbar-link" href="{% url 'about' %}">About</a>
         </li>
         <li>
           <a class="navbar-link" href="https://github.com">Github</a>
@@ -35,23 +35,23 @@
           <a class="navbar-link" href="https://linkedin.com">LinkedIn</a>
         </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav">
         {% if user.is_authenticated %}
           <li>
-            <a class="navbar-link" href="{% url 'post_new'%}">New Post</a>
+            <a class="navbar-link" href="{% url 'post_new' %}">New Post</a>
           </li>
           <li>
-            <a class="navbar-link" href="{% url 'drafts'%}">Drafts</a>
+            <a class="navbar-link" href="{% url 'drafts' %}">Drafts</a>
           </li>
           <li>
-            <a class="navbar-link" href="{% url 'logout'%}">Logout</a>
+            <a class="navbar-link" href="{% url 'logout' %}">Logout</a>
           </li>
           <li>
             <a>Welcome, {{ user.username }}!</a>
           </li>
         {% else %}
           <li>
-            <a class="navbar-link" href="{% url 'login' %}"><span class='glyphicon glyphicon-user'/></a>
+            <a class="navbar-link" href="{% url 'login' %}">Login</a>
           </li>
         {% endif %}
       </ul>
